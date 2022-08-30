@@ -1,0 +1,10 @@
+.gameover {
+  text-align: center;
+  font-size: 30px;
+}
+
+.gameover button {
+  width: 50px;
+  height: 30px;
+  margin-left: 150px;
+}

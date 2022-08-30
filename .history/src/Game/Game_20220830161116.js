@@ -8,7 +8,6 @@ const Game = () => {
   const [player, setPlayer] = useState("O");
   const [countDown, setCountDown] = useState(8);
   const [gameOver, setGameOver] = useState(false);
-  const [result, setResult] = useState();
 
   const [cellValues, setCellValues] = useState([
     "",
@@ -43,15 +42,7 @@ const Game = () => {
 
     if (countDown === 0) {
       setGameOver(true);
-      setResult("win");
     }
-  };
-
-  const resetHandler = () => {
-    setPlayer("O");
-    setCountDown(8);
-    setCellValues(["", "", "", "", "", "", "", "", ""]);
-    setResult();
   };
 
   const checkWin = () => {
@@ -68,21 +59,15 @@ const Game = () => {
 
       if (foundWiiningPattern) {
         setGameOver(true);
-        if (player === "O") {
-          setResult("X is Winner");
-        } else {
-          setResult("O is Winner");
-        }
       }
     });
   };
   return (
-    <div className="game">
-      <div className="result">{result}</div>
+    <div className='game'>
       {cellValues.map((value, index) => (
         <Cell key={index} value={value} onClick={() => clickHandler(index)} />
       ))}
-      {gameOver && <GameOver onClick={resetHandler} />}
+      {gameOver && <GameOver onClick={clickHandler} />}
     </div>
   );
 };

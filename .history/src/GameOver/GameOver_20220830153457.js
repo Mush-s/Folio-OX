@@ -1,0 +1,11 @@
+import classes from './GameOver.css'
+
+const GameOver = (props) => {
+  return (
+    <div className={classes.gameover}>
+      <button onClick={props.onClick}>hi</button>
+    </div>
+  );
+};
+
+export default GameOver;

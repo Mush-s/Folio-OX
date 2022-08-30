@@ -2,18 +2,4 @@
   position: relative;
   height: 50em;
 }
-button {
-  height: 32%;
-  width: 32%;
-}
-.Game {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  height: 300px;
-  width: 300px;
-  display: flex;
-  flex-wrap: wrap;
-}
+

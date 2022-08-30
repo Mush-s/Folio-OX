@@ -69,9 +69,9 @@ const Game = () => {
       if (foundWiiningPattern) {
         setGameOver(true);
         if (player === "O") {
-          setResult("X is Winner");
+          setResult("X is winner");
         } else {
-          setResult("O is Winner");
+          setResult("O is winner");
         }
       }
     });

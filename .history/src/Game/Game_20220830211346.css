@@ -1,0 +1,16 @@
+.game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .result{
+    font-size: 30px;
+  }
+  
