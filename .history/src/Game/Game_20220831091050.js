@@ -9,7 +9,6 @@ const Game = () => {
   const [countDown, setCountDown] = useState(8);
   const [gameOver, setGameOver] = useState(false);
   const [result, setResult] = useState();
-  const [mode, setMode] = useState("Normal");
 
   const [cellValues, setCellValues] = useState([
     "",
@@ -27,21 +26,7 @@ const Game = () => {
     checkWin();
   });
 
-  useEffect(() => {
-    const timer= setTimeout(() => {
-      if (player === "O") {
-        setResult("X is Winner");
-      }
-      if (player === "X") {
-        setResult("0 is Winner");
-      }
-    }, 3 * 1000);
-    console.log(timer)
-  }, [countDown]);
-
   const isCellEmpty = (index) => cellValues[index] === "";
-
-  //Cell Clicked ここから
 
   const clickHandler = (index) => {
     if (isCellEmpty(index)) {
@@ -55,30 +40,13 @@ const Game = () => {
       } else {
         setPlayer("O");
       }
+    }
 
-      if (countDown === 0) {
-        setGameOver(true);
-        setResult("引き分けです");
-      }
-      // Repaint mode 処理
-    } else {
-      if (mode === "Repaint") {
-        setCountDown(countDown - 1);
-        const newCellValues = [...cellValues];
-        newCellValues[index] = player;
-        setCellValues(newCellValues);
-
-        if (player === "O") {
-          setPlayer("X");
-        } else {
-          setPlayer("O");
-        }
-      }
-      setMode("Normal");
+    if (countDown === 0) {
+      setGameOver(true);
+      setResult("引き分けです");
     }
   };
-
-  //Reset Button ここから
 
   const resetHandler = () => {
     setPlayer("O");
@@ -87,30 +55,14 @@ const Game = () => {
     setResult();
   };
 
-  //Back button ここから
-
   const backHandler = () => {
-    // setCountDown(countDown + 1);
-    // const backedValues = [...cellValues]
-    // setCellValues(backedValues)
-    // if (player === "O") {
-    //   setPlayer("X");
-    // } else {
-    //   setPlayer("O");
-    // }
-  };
-
-  //Change button ここから
-
-  const ChangeHandler = () => {
-    if (mode === "Normal") {
-      setMode("Repaint");
-    }
-    if (mode === "Repaint") {
-      setMode("Normal");
+    setCountDown(countDown + 1);
+    if (player === "O") {
+      setPlayer("X");
+    } else {
+      setPlayer("O");
     }
   };
-  //勝ち負け判定
 
   const checkWin = () => {
     Pattern.forEach((currPa) => {
@@ -141,12 +93,7 @@ const Game = () => {
       {cellValues.map((value, index) => (
         <Cell key={index} value={value} onClick={() => clickHandler(index)} />
       ))}
-      <GameOver
-        mode={mode}
-        onClick={resetHandler}
-        onBack={backHandler}
-        onChange={ChangeHandler}
-      />
+      {gameOver && <GameOver onClick={resetHandler} onBack={backHandler} />}
     </div>
   );
 };

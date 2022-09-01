@@ -27,18 +27,6 @@ const Game = () => {
     checkWin();
   });
 
-  useEffect(() => {
-    const timer= setTimeout(() => {
-      if (player === "O") {
-        setResult("X is Winner");
-      }
-      if (player === "X") {
-        setResult("0 is Winner");
-      }
-    }, 3 * 1000);
-    console.log(timer)
-  }, [countDown]);
-
   const isCellEmpty = (index) => cellValues[index] === "";
 
   //Cell Clicked ここから

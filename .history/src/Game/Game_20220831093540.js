@@ -9,7 +9,7 @@ const Game = () => {
   const [countDown, setCountDown] = useState(8);
   const [gameOver, setGameOver] = useState(false);
   const [result, setResult] = useState();
-  const [mode, setMode] = useState("Normal");
+  const [bigMode, setBigMode] = useState("normal');
 
   const [cellValues, setCellValues] = useState([
     "",
@@ -27,18 +27,6 @@ const Game = () => {
     checkWin();
   });
 
-  useEffect(() => {
-    const timer= setTimeout(() => {
-      if (player === "O") {
-        setResult("X is Winner");
-      }
-      if (player === "X") {
-        setResult("0 is Winner");
-      }
-    }, 3 * 1000);
-    console.log(timer)
-  }, [countDown]);
-
   const isCellEmpty = (index) => cellValues[index] === "";
 
   //Cell Clicked ここから
@@ -50,31 +38,24 @@ const Game = () => {
       newCellValues[index] = player;
       setCellValues(newCellValues);
 
+      if (bigMode) {
+        if (player === "O") {
+          setPlayer("●");
+        } else {
+          setPlayer("✖︎");
+        }
+      }
+
       if (player === "O") {
         setPlayer("X");
       } else {
         setPlayer("O");
       }
+    }
 
-      if (countDown === 0) {
-        setGameOver(true);
-        setResult("引き分けです");
-      }
-      // Repaint mode 処理
-    } else {
-      if (mode === "Repaint") {
-        setCountDown(countDown - 1);
-        const newCellValues = [...cellValues];
-        newCellValues[index] = player;
-        setCellValues(newCellValues);
-
-        if (player === "O") {
-          setPlayer("X");
-        } else {
-          setPlayer("O");
-        }
-      }
-      setMode("Normal");
+    if (countDown === 0) {
+      setGameOver(true);
+      setResult("引き分けです");
     }
   };
 
@@ -101,14 +82,8 @@ const Game = () => {
   };
 
   //Change button ここから
-
   const ChangeHandler = () => {
-    if (mode === "Normal") {
-      setMode("Repaint");
-    }
-    if (mode === "Repaint") {
-      setMode("Normal");
-    }
+    setBigMode(true);
   };
   //勝ち負け判定
 
@@ -142,7 +117,7 @@ const Game = () => {
         <Cell key={index} value={value} onClick={() => clickHandler(index)} />
       ))}
       <GameOver
-        mode={mode}
+        mode={bigMode}
         onClick={resetHandler}
         onBack={backHandler}
         onChange={ChangeHandler}

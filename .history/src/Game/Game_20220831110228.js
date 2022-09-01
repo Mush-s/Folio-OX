@@ -28,16 +28,15 @@ const Game = () => {
   });
 
   useEffect(() => {
-    const timer= setTimeout(() => {
+    setTimeout(() => {
       if (player === "O") {
         setResult("X is Winner");
       }
       if (player === "X") {
         setResult("0 is Winner");
       }
-    }, 3 * 1000);
-    console.log(timer)
-  }, [countDown]);
+    }, 5 * 1000);
+  }, [player]);
 
   const isCellEmpty = (index) => cellValues[index] === "";
 

@@ -9,7 +9,7 @@ const Game = () => {
   const [countDown, setCountDown] = useState(8);
   const [gameOver, setGameOver] = useState(false);
   const [result, setResult] = useState();
-  const [mode, setMode] = useState("Normal");
+  const [mode, setMode] = useState("normal");
 
   const [cellValues, setCellValues] = useState([
     "",
@@ -26,18 +26,6 @@ const Game = () => {
   useEffect(() => {
     checkWin();
   });
-
-  useEffect(() => {
-    const timer= setTimeout(() => {
-      if (player === "O") {
-        setResult("X is Winner");
-      }
-      if (player === "X") {
-        setResult("0 is Winner");
-      }
-    }, 3 * 1000);
-    console.log(timer)
-  }, [countDown]);
 
   const isCellEmpty = (index) => cellValues[index] === "";
 
@@ -62,7 +50,7 @@ const Game = () => {
       }
       // Repaint mode 処理
     } else {
-      if (mode === "Repaint") {
+      if (mode === "repaint") {
         setCountDown(countDown - 1);
         const newCellValues = [...cellValues];
         newCellValues[index] = player;
@@ -74,7 +62,7 @@ const Game = () => {
           setPlayer("O");
         }
       }
-      setMode("Normal");
+      setMode("normal");
     }
   };
 
@@ -103,11 +91,11 @@ const Game = () => {
   //Change button ここから
 
   const ChangeHandler = () => {
-    if (mode === "Normal") {
+    if (mode === "normal") {
       setMode("Repaint");
     }
     if (mode === "Repaint") {
-      setMode("Normal");
+      setMode("normal");
     }
   };
   //勝ち負け判定

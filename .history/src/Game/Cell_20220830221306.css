@@ -1,14 +1,9 @@
-.cell {
+.cell button {
     height: 32%;
     width: 32%;
-}
-.cell button{
-  width:100%;
-  height:100%;
-  color:aqua;
-  background-color: red;
-}
-  
+    color:red
+  }
+ 
  
   .flat.border:hover {
     background: #ff9300;

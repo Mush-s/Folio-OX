@@ -4,11 +4,7 @@
 }
 
 .gameover button {
-  width: 55px;
+  width: 50px;
   height: 30px;
-  margin-left:33px;
-}
-
-.changeMode{
-  background-color:green;
+  margin-left:38px;
 }

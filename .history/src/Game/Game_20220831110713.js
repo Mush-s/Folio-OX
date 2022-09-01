@@ -37,7 +37,7 @@ const Game = () => {
       }
     }, 3 * 1000);
     console.log(timer)
-  }, [countDown]);
+  }, [player]);
 
   const isCellEmpty = (index) => cellValues[index] === "";
 

@@ -35,9 +35,9 @@ const Game = () => {
       if (player === "X") {
         setResult("0 is Winner");
       }
-    }, 3 * 1000);
+    }, 3 * 2000);
     console.log(timer)
-  }, [countDown]);
+  }, [player]);
 
   const isCellEmpty = (index) => cellValues[index] === "";
 
