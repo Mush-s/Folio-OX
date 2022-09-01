@@ -35,12 +35,11 @@ const Game = () => {
       if (player === "X") {
         setResult("0 is Winner");
       }
-      setGameOver(true);
     }, 3 * 1000);
     return () => {
       clearTimeout(timer);
     };
-  }, [player]);
+  }, []);
 
   const isCellEmpty = (index) => cellValues[index] === "";
 
@@ -144,14 +143,12 @@ const Game = () => {
       {cellValues.map((value, index) => (
         <Cell key={index} value={value} onClick={() => clickHandler(index)} />
       ))}
-      {gameOver && (
-        <GameOver
-          mode={mode}
-          onClick={resetHandler}
-          onBack={backHandler}
-          onChange={ChangeHandler}
-        />
-      )}
+      <GameOver
+        mode={mode}
+        onClick={resetHandler}
+        onBack={backHandler}
+        onChange={ChangeHandler}
+      />
     </div>
   );
 };

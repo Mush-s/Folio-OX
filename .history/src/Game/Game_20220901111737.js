@@ -144,14 +144,12 @@ const Game = () => {
       {cellValues.map((value, index) => (
         <Cell key={index} value={value} onClick={() => clickHandler(index)} />
       ))}
-      {gameOver && (
-        <GameOver
-          mode={mode}
-          onClick={resetHandler}
-          onBack={backHandler}
-          onChange={ChangeHandler}
-        />
-      )}
+      <GameOver
+        mode={mode}
+        onClick={resetHandler}
+        onBack={backHandler}
+        onChange={ChangeHandler}
+      />
     </div>
   );
 };
