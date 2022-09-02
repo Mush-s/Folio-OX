@@ -49,12 +49,9 @@ const Game = () => {
   useEffect(() => {
     updataCount();
     console.log(time);
-    return () => clearInterval(timer);
-  });
 
-  useEffect(() => {
-    setTime(5);
-  }, [player]);
+    return () => clearInterval(timer);
+  }, []);
 
   const isCellEmpty = (index) => cellValues[index] === "";
 

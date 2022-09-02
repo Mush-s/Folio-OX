@@ -50,11 +50,7 @@ const Game = () => {
     updataCount();
     console.log(time);
     return () => clearInterval(timer);
-  });
-
-  useEffect(() => {
-    setTime(5);
-  }, [player]);
+  }, []);
 
   const isCellEmpty = (index) => cellValues[index] === "";
 

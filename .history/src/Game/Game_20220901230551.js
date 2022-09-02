@@ -32,29 +32,19 @@ const Game = () => {
   let timer;
   const updataCount = () => {
     timer = setInterval(() => {
+      console.log(time);
       setTime((preC) => preC - 1);
     }, 1000);
 
     if (time === 0) {
       clearInterval(timer);
-      if (player === "O") {
-        setResult("X is Winner");
-      }
-      if (player === "X") {
-        setResult("O is Winner");
-      }
     }
   };
 
   useEffect(() => {
     updataCount();
-    console.log(time);
     return () => clearInterval(timer);
-  });
-
-  useEffect(() => {
-    setTime(5);
-  }, [player]);
+  }, [time]);
 
   const isCellEmpty = (index) => cellValues[index] === "";
 

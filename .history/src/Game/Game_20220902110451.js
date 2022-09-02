@@ -52,10 +52,6 @@ const Game = () => {
     return () => clearInterval(timer);
   });
 
-  useEffect(() => {
-    setTime(5);
-  }, [player]);
-
   const isCellEmpty = (index) => cellValues[index] === "";
 
   //Cell Clicked ここから

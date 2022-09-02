@@ -29,25 +29,23 @@ const Game = () => {
     checkWin();
   });
 
-  let timer;
-  const updataCount = () => {
-    timer = setInterval(() => {
-      setTime((preC) => preC - 1);
-    }, 1000);
-
-    if (time === 0) {
-      clearInterval(timer);
-      if (player === "O") {
-        setResult("X is Winner");
-      }
-      if (player === "X") {
-        setResult("O is Winner");
-      }
-    }
-  };
-
   useEffect(() => {
-    updataCount();
+    let timer;
+    const updataCount = () => {
+      timer = setInterval(() => {
+        setTime((preC) => preC - 1);
+      }, 1000);
+
+      if (time === 0) {
+        clearInterval(timer);
+        if (player === "O") {
+          setResult("X is Winner");
+        }
+        if (player === "X") {
+          setResult("O is Winner");
+        }
+      }
+    };
     console.log(time);
     return () => clearInterval(timer);
   });

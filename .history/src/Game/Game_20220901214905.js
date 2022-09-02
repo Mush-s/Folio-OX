@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Cell from "./Cell";
 import { Pattern } from "../Patterns/Pattern";
 import GameOver from "../GameOver/GameOver";
-
 import "./Game.css";
 
 const Game = () => {
@@ -29,32 +28,30 @@ const Game = () => {
     checkWin();
   });
 
-  let timer;
-  const updataCount = () => {
-    timer = setInterval(() => {
-      setTime((preC) => preC - 1);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (player === "O") {
+  //       setResult("X is Winner");
+  //     }
+  //     if (player === "X") {
+  //       setResult("0 is Winner");
+  //     }
+  //     setGameOver(true);
+  //   }, 3 * 1000);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [player]);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTime((preTime) => preTime - 1);
+console.log(time)
     }, 1000);
-
     if (time === 0) {
-      clearInterval(timer);
-      if (player === "O") {
-        setResult("X is Winner");
-      }
-      if (player === "X") {
-        setResult("O is Winner");
-      }
+      clearInterval(id);
     }
-  };
-
-  useEffect(() => {
-    updataCount();
-    console.log(time);
-    return () => clearInterval(timer);
   });
-
-  useEffect(() => {
-    setTime(5);
-  }, [player]);
 
   const isCellEmpty = (index) => cellValues[index] === "";
 
@@ -166,7 +163,7 @@ const Game = () => {
           onChange={ChangeHandler}
         />
       )}
-      <div>count is: {time}</div>;
+      <div>{time}</div>
     </div>
   );
 };
