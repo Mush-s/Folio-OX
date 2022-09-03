@@ -1,0 +1,12 @@
+.start {
+  text-align: center;
+  font-size: 60px;
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+  background-color: rgb(101, 101, 100);
+  width: 80%;
+}

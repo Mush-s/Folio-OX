@@ -1,0 +1,66 @@
+.start {
+  text-align: center;
+  font-size: 60px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(2, 102, 179);
+  margin-top: 30px;
+}
+.header-logo {
+  font-size: 70px;
+  margin-left: 50px;
+  background-color: rgb(255, 255, 255);
+}
+.header-list {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.header-list li {
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 15px;
+}
+
+.start-button a {
+}
+.start-button li {
+  list-style-type: none;
+  width: 80%;
+  margin: 30px auto;
+}
+
+.start-button li:hover {
+  background-color: #dad9d8f7;
+}
+
+.start-button img{
+  width:15%;
+}
+
+.start-button a {
+  display: block;
+  border-radius: 20%;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: 0.3s;
+}
+.start a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 0;
+  height: 1px; /*下線の太さ*/
+  background-color: #337ab7; /*下線の色*/
+  transition: 0.3s;
+}
+.start a:hover::after {
+  width: 100%;
+}

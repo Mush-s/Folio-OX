@@ -1,0 +1,16 @@
+.start {
+  text-align: center;
+  font-size: 60px;
+}
+
+ul {
+  list-style-type: none;
+}
+.start a {
+  background-color: rgb(101, 101, 100);
+  display: block;
+}
+li {
+  width: 80%;
+  margin: 30px auto;
+}

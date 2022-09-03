@@ -1,0 +1,25 @@
+.start {
+  text-align: center;
+  font-size: 60px;
+}
+
+.header-logo {
+  margin-left: 30px;
+  background-color: rgb(97, 73, 73);
+}
+.header-list {
+  display: flex;
+}
+.header-list li {
+  margin-left: 30px;
+}
+
+.start-button a {
+  background-color: rgb(217, 217, 217);
+  display: block;
+}
+.start-button li {
+  list-style-type: none;
+  width: 80%;
+  margin: 30px auto;
+}
