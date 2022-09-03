@@ -1,0 +1,26 @@
+.game {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game .result {
+  font-size: 50px;
+  margin-bottom: 20px;
+margin-left:15px;
+}
+
+.game .timer {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.game .turn {
+  font-size: 30px;
+}

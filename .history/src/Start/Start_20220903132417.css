@@ -1,0 +1,13 @@
+.start {
+  text-align: center;
+  font-size: 60px;
+}
+
+a:-webkit-any-link {
+  color: black;
+  text-decoration: none;
+}
+
+button {
+  cursor: poiner;
+}

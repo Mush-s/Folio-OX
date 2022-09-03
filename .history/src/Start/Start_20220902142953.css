@@ -1,0 +1,10 @@
+.start {
+  text-align: center;
+  font-size: 60px;
+  color: aliceblue;
+}
+
+
+a:-webkit-any-link {
+    color: white;
+}

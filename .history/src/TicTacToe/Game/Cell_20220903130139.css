@@ -1,0 +1,19 @@
+.cell {
+    height: 32%;
+    width: 32%;
+}
+.cell button{
+  width:100%;
+  height:100%;
+  color:aqua;
+  background-color:black;
+}
+  
+ 
+  .flat.border:hover {
+    background: #ff9300;
+    color: #fff;
+  }
+  .flat.border:active, .flat.border:focus {
+    top: 2px;
+  }
