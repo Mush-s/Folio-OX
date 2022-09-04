@@ -31,13 +31,7 @@ const Start = () => {
             </Link>
           </li>
           <li>
-            <Link to="nanmon">
-              <img
-                src="https://sugorokuya.jp/assets/products/nanjamonja/nanjamonja_wt-card-matrix-w800-714bce2ee63a030a02946d11ed11b930055551c61b2eaa47287edc89866c5f83.jpg"
-                alt="hi"
-              />
-              | NanMon
-            </Link>
+            <a href="#">Under Development</a>
           </li>
           <li>
             <a href="#">Under Development</a>

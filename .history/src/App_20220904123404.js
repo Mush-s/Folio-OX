@@ -1,6 +1,6 @@
 import "./App.css";
 import Game from "./TicTacToe/Game/Game";
-import Game1 from "./NanMon/Game/Game1";
+import Game1 from "./NanMon/Game/Game";
 import Start from "./Start/Start";
 import { Route, Routes } from "react-router-dom";
 

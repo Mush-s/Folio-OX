@@ -1,0 +1,7 @@
+.character {
+  text-align: center;
+}
+.inputs {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,8 @@
+.character {
+  text-align: center;
+}
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 100px 0 100px;
+}

@@ -1,6 +1,6 @@
 import "./App.css";
 import Game from "./TicTacToe/Game/Game";
-import Game1 from "./NanMon/Game/Game1";
+import Game from "./NanMon/Game/Game";
 import Start from "./Start/Start";
 import { Route, Routes } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Start />} />
         <Route path="/tictactou" element={<Game />} />
-        <Route path="/nanmon" element={<Game1 />} />
+        <Route path="/nanmon" element={<Game />} />
       </Routes>
     </div>
   );
