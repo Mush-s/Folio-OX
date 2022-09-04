@@ -25,7 +25,7 @@ const Start = () => {
             <Link to="game">
               <img
                 src="https://dictionary.cambridge.org/ja/images/thumb/nought_noun_002_25125.jpg?version=5.0.250"
-                alt="tic tac tou"
+                alt="hi"
               />
               | Tic Tac Toe
             </Link>

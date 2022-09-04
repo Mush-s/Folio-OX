@@ -1,0 +1,15 @@
+.back button {
+  width: 70px;
+  height: 70px;
+  font-size: 18px;
+  display: inline-block;
+  background: #ffffff;
+  color: #cc99ff;
+  width: 80px;
+  height: 80px;
+  border: double 4px #cc99ff;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+}

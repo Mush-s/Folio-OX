@@ -146,9 +146,9 @@ const Game = () => {
     });
   };
   return (
-    <div className="game">
+    <>
       <Back />
-      <div className="tictactou">
+      <div className="game">
         <div className="result">{result}</div>
         {!gameOver && <div className="turn">{player}'s Turn</div>}
         {!gameOver && <p className="timer">Have {time} seconds</p>}
@@ -162,7 +162,7 @@ const Game = () => {
         />
         {gameOver && <OverLay onClick={resetHandler} result={result} />}
       </div>
-    </div>
+    </>
   );
 };
 

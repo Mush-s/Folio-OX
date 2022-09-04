@@ -5,7 +5,7 @@ import GameButtons from "./GameButtons/GameButtons";
 
 import "./Game.css";
 import { OverLay } from "../..";
-import Back from "../../Components/Back/Back";
+import Header from "../../Start/header/Header";
 
 const Game = () => {
   const [player, setPlayer] = useState("O");
@@ -109,6 +109,18 @@ const Game = () => {
     setResult();
   };
 
+  //Back button ここから
+
+  const backHandler = () => {
+    // setCountDown(countDown + 1);
+    // const backedValues = [...cellValues]
+    // setCellValues(backedValues)
+    // if (player === "O") {
+    //   setPlayer("X");
+    // } else {
+    //   setPlayer("O");
+    // }
+  };
 
   //Change button ここから
 
@@ -146,9 +158,9 @@ const Game = () => {
     });
   };
   return (
-    <div className="game">
-      <Back />
-      <div className="tictactou">
+    <>
+      <Header />
+      <div className="game">
         <div className="result">{result}</div>
         {!gameOver && <div className="turn">{player}'s Turn</div>}
         {!gameOver && <p className="timer">Have {time} seconds</p>}
@@ -158,11 +170,12 @@ const Game = () => {
         <GameButtons
           mode={mode}
           onClick={resetHandler}
+          onBack={backHandler}
           onChange={ChangeHandler}
         />
         {gameOver && <OverLay onClick={resetHandler} result={result} />}
       </div>
-    </div>
+    </>
   );
 };
 
