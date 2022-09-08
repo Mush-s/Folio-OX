@@ -12,29 +12,28 @@ const Character = () => {
   });
   const [random, setRandom] = useState(char);
 
-  const fetchchara = async () => {
-    const characters = await fetch(
-      "https://games-31fd4-default-rtdb.firebaseio.com/Nanmon/Character.json"
-    );
-
-    if (!characters.ok) {
-      console.log(characters);
-    }
-
-    const responseDate = await characters.json();
-    const loadedCharacters = [];
-    for (const key in responseDate) {
-      loadedCharacters.push({
-        id: key,
-        img: responseDate[key].img,
-        name: responseDate[key].name,
-      });
-    }
-    setChar(loadedCharacters);
-    console.log("kokok");
-  };
-
   useEffect(() => {
+    const fetchchara = async () => {
+      const characters = await fetch(
+        "https://games-31fd4-default-rtdb.firebaseio.com/Nanmon/Character.json"
+      );
+
+      if (!characters.ok) {
+        console.log(characters);
+      }
+
+      const responseDate = await characters.json();
+      const loadedCharacters = [];
+      for (const key in responseDate) {
+        loadedCharacters.push({
+          id: key,
+          img: responseDate[key].img,
+          name: responseDate[key].name,
+        });
+      }
+      setChar(loadedCharacters);
+      console.log("kokok");
+    };
     fetchchara();
   }, [random, charName]);
 
@@ -91,7 +90,6 @@ const Character = () => {
     });
     console.log(charName);
     setCharName("");
-    fetchchara();
   };
 
   const answerChange = (e) => {

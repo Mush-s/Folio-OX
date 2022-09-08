@@ -33,7 +33,6 @@ const Character = () => {
     setChar(loadedCharacters);
     console.log("kokok");
   };
-
   useEffect(() => {
     fetchchara();
   }, [random, charName]);
@@ -65,6 +64,7 @@ const Character = () => {
 
   const nextHandler = (e) => {
     e.preventDefault();
+    fetchchara();
     setRandom(char[Math.floor(Math.random() * char.length)]);
     setStart(true);
     console.log("NExt");
@@ -91,7 +91,6 @@ const Character = () => {
     });
     console.log(charName);
     setCharName("");
-    fetchchara();
   };
 
   const answerChange = (e) => {

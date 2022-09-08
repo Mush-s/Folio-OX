@@ -1,0 +1,10 @@
+.character button{
+  margin: 10px auto;
+}
+.character img {
+  width: 50%;
+  height: 50%;
+}
+.inputs {
+  margin-top: 30px;
+}
