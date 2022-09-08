@@ -4,8 +4,6 @@
 .inputs {
   display: flex;
   justify-content: space-between;
-}
-.inputs button{
-    width:150px;
+  margin: 30px 80px 0 80px;
 }
 
