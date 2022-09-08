@@ -35,7 +35,8 @@ const Character = (props) => {
   };
 
   const answerHandler = () => {};
-
+  console.log(random);
+  console.log(random.id);
   const deleteHandler = () => {
     fetch(
       `https://games-31fd4-default-rtdb.firebaseio.com/Nanmon/Character/${random.id}.json`,
@@ -54,7 +55,6 @@ const Character = (props) => {
       console.log("Update ok!");
       return response.json();
     });
-    setRandom(props.char[Math.floor(Math.random() * props.char.length)]);
   };
 
   const reloadHandler = (e) => {

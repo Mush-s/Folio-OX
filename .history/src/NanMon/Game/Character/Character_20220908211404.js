@@ -35,26 +35,30 @@ const Character = (props) => {
   };
 
   const answerHandler = () => {};
-
+console.log(random)
+  console.log(random.id);
   const deleteHandler = () => {
-    fetch(
-      `https://games-31fd4-default-rtdb.firebaseio.com/Nanmon/Character/${random.id}.json`,
-      {
-        method: "PUT",
+    const deleteFetch = () => {
+      const thisUrl = `https://games-31fd4-default-rtdb.firebaseio.com/Nanmon/Character/${random.id.name}.json`;
+      fetch(thisUrl, {
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ img: random.img, name: "" }),
-      }
-    ).then((response) => {
-      if (!response.ok) {
-        console.log("Update error!");
-        throw new Error("error");
-      }
-      console.log("Update ok!");
-      return response.json();
-    });
-    setRandom(props.char[Math.floor(Math.random() * props.char.length)]);
+      })
+        .then((response) => {
+          if (!response.ok) {
+            console.log("Delete error!");
+            throw new Error("error");
+          }
+          console.log("Delete ok!");
+          return response.json();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    deleteFetch();
   };
 
   const reloadHandler = (e) => {

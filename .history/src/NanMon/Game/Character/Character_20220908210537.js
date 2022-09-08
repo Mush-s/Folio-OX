@@ -37,24 +37,34 @@ const Character = (props) => {
   const answerHandler = () => {};
 
   const deleteHandler = () => {
-    fetch(
-      `https://games-31fd4-default-rtdb.firebaseio.com/Nanmon/Character/${random.id}.json`,
-      {
-        method: "PUT",
+    const deleteFetch = (thisLi) => {
+      const thisId = thisLi.dataset.id;
+      const thisUrl = url + "/" + thisId + ".json";
+      fetch(thisUrl, {
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ img: random.img, name: "" }),
-      }
-    ).then((response) => {
-      if (!response.ok) {
-        console.log("Update error!");
-        throw new Error("error");
-      }
-      console.log("Update ok!");
-      return response.json();
-    });
-    setRandom(props.char[Math.floor(Math.random() * props.char.length)]);
+      })
+        .then((response) => {
+          if (!response.ok) {
+            console.log("Delete error!");
+            throw new Error("error");
+          }
+          console.log("Delete ok!");
+          return response.json();
+        })
+        .then((data) => {
+          if (data === null) {
+            console.log("Delete ID->" + thisId);
+          }
+          thisLi.remove();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    deleteFetch();
   };
 
   const reloadHandler = (e) => {
