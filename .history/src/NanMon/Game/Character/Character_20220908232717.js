@@ -5,9 +5,7 @@ const Character = () => {
   const [charName, setCharName] = useState("");
   const [answer, setAnswer] = useState("");
   const [start, setStart] = useState(false);
-  const [player, setPlayer] = useState("");
-  const [player1Point, setPlayer1Point] = useState(0);
-  const [player2Point, setPlayer2Point] = useState(0);
+  const [point, setPoint] = useState(0);
   const [char, setChar] = useState({
     id: "",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU2VfwYNAH3zcUqi46YyKcMkCmYShfJDi94A&usqp=CAU",
@@ -41,12 +39,10 @@ const Character = () => {
     fetchchara();
   }, [random, charName]);
 
-  // 名前変える
   const changeHandler = (e) => {
     setCharName(e.target.value);
   };
 
-  // 名前の初期化
   const deleteHandler = () => {
     fetch(
       `https://games-31fd4-default-rtdb.firebaseio.com/Nanmon/Character/${random.id}.json`,
@@ -68,7 +64,6 @@ const Character = () => {
     setRandom(char[Math.floor(Math.random() * char.length)]);
   };
 
-  //次の画像へ
   const nextHandler = (e) => {
     e.preventDefault();
     setRandom(char[Math.floor(Math.random() * char.length)]);
@@ -76,7 +71,6 @@ const Character = () => {
     console.log("NExt");
   };
 
-  //名前をつける
   const namedHandler = (e) => {
     e.preventDefault();
     fetch(
@@ -108,32 +102,18 @@ const Character = () => {
   const answerHandler = (e) => {
     e.preventDefault();
     if (answer === random.name) {
-      if (player === 1) {
-        setPlayer1Point((preState) => preState + 1);
-        console.log("YES");
-      }
-      if (player === 2) {
-        setPlayer2Point((preState) => preState + 1);
-      }
+      setPoint((preState) => preState++);
+      console.log("YES");
     } else {
       console.log("NO");
     }
-    setAnswer("");
   };
 
-  const changeToPlayer1 = () => {
-    setPlayer(1);
-  };
-
-  const changeToPlayer2 = () => {
-    setPlayer(2);
-  };
   return (
     <>
       <div className="character">
-        <div>2PLAYER</div>
         <div>What is this name?</div>
-        {/* <div>{random.name}</div> */}
+        <div>{random.name}</div>
         <img src={random.img} alt="" />
       </div>
       <div className="inputs">
@@ -153,22 +133,8 @@ const Character = () => {
           </form>
         )}
         {start && <button onClick={deleteHandler}>delete</button>}
-        <p>point is :{player1Point}</p>
+        <p>{point}</p>
       </div>
-      {start && (
-        <div className="players">
-          <div className={player === 1 && "player1"}>
-            <div>player1</div>
-            <div> have {player1Point} point</div>
-            <button onClick={changeToPlayer1}>Answer</button>
-          </div>
-          <div className={player === 2 && "player2"}>
-            <div>player2</div>
-            <div> have {player2Point} point</div>
-            <button onClick={changeToPlayer2}>Answer</button>
-          </div>
-        </div>
-      )}
     </>
   );
 };

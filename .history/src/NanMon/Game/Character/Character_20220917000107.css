@@ -11,12 +11,8 @@
 }
 .players {
   display: flex;
-  font-size: 20px;
-  justify-content: space-between;
+  font-size: 10px;
 }
-.player1 {
-  background-color: antiquewhite;
-}
-.player2 {
-  background-color: antiquewhite;
+.players1{
+  width:50%;
 }

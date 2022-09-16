@@ -12,11 +12,7 @@
 .players {
   display: flex;
   font-size: 20px;
-  justify-content: space-between;
 }
-.player1 {
-  background-color: antiquewhite;
-}
-.player2 {
-  background-color: antiquewhite;
+.player1{
+  width:50%;
 }

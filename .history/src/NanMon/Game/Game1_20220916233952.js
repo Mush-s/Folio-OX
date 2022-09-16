@@ -10,19 +10,19 @@ const Game1 = () => {
   const [number, setNumber] = useState();
   const clickHandler1 = () => {
     setClose(true);
-    setNumber(2);
+    setNumber(1);
   };
 
   const clickHandler2 = () => {
     setClose(true);
-    setNumber(3);
+    setNumber(2);
   };
   return (
     <div className="game">
       <div className="main">
         <Back />
-        {number === 2 && <Character />}
-        {number === 3 && <Character2 />}
+        {number === 1 && <Character />}
+        {number === 2 && <Character2 />}
       </div>
       {!close && (
         <BeforeGame onClick={clickHandler1} onClick2={clickHandler2} />

@@ -1,7 +1,6 @@
 .inputs {
   display: flex;
   justify-content: space-between;
-
 }
 .inputs button{
     width:150px;

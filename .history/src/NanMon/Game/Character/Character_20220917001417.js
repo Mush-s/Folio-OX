@@ -155,20 +155,18 @@ const Character = () => {
         {start && <button onClick={deleteHandler}>delete</button>}
         <p>point is :{player1Point}</p>
       </div>
-      {start && (
-        <div className="players">
-          <div className={player === 1 && "player1"}>
-            <div>player1</div>
-            <div> have {player1Point} point</div>
-            <button onClick={changeToPlayer1}>Answer</button>
-          </div>
-          <div className={player === 2 && "player2"}>
-            <div>player2</div>
-            <div> have {player2Point} point</div>
-            <button onClick={changeToPlayer2}>Answer</button>
-          </div>
+      <div className="players">
+        <div className={player === 1 && "player1"}>
+          <div>player1</div>
+          <div> have {player1Point} point</div>
+          <button onClick={changeToPlayer1}>Answer</button>
         </div>
-      )}
+        <div className={player === 2 && "player2"}>
+          <div>player2</div>
+          <div> have {player2Point} point</div>
+          <button onClick={changeToPlayer2}>Answer</button>
+        </div>
+      </div>
     </>
   );
 };
