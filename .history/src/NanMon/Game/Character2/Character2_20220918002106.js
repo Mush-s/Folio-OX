@@ -4,10 +4,7 @@ const Character2 = () => {
   const [charName, setCharName] = useState("");
   const [answer, setAnswer] = useState("");
   const [start, setStart] = useState(false);
-  const [player1Point, setPlayer1Point] = useState(0);
-  const [player2Point, setPlayer2Point] = useState(0);
-  const [player3Point, setPlayer3Point] = useState(0);
-
+  const [point, setPoint] = useState(0);
   const [player, setPlayer] = useState();
   const [char, setChar] = useState({
     id: "",
@@ -109,15 +106,8 @@ const Character2 = () => {
   const answerHandler = (e) => {
     e.preventDefault();
     if (answer === random.name) {
-      if (player === 1) {
-        setPlayer1Point((preState) => preState + 1);
-      }
-      if (player === 2) {
-        setPlayer2Point((preState) => preState + 1);
-      }
-      if (player === 3) {
-        setPlayer3Point((preState) => preState + 1);
-      }
+      setPoint((preState) => preState + 1);
+      console.log("YES");
     } else {
       console.log("NO");
     }
@@ -131,11 +121,6 @@ const Character2 = () => {
   const changeToPlayer2 = () => {
     setPlayer(2);
   };
-
-  const changeToPlayer3 = () => {
-    setPlayer(3);
-  };
-
   return (
     <>
       <div className="character2">
@@ -172,11 +157,6 @@ const Character2 = () => {
               <div>player2</div>
               <div> have {player2Point} point</div>
               <button onClick={changeToPlayer2}>Answer</button>
-            </div>
-            <div className={player === 3 && "player3"}>
-              <div>player2</div>
-              <div> have {player3Point} point</div>
-              <button onClick={changeToPlayer3}>Answer</button>
             </div>
           </div>
         )}

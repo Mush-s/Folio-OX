@@ -131,11 +131,7 @@ const Character2 = () => {
   const changeToPlayer2 = () => {
     setPlayer(2);
   };
-
-  const changeToPlayer3 = () => {
-    setPlayer(3);
-  };
-
+  
   return (
     <>
       <div className="character2">
@@ -172,8 +168,7 @@ const Character2 = () => {
               <div>player2</div>
               <div> have {player2Point} point</div>
               <button onClick={changeToPlayer2}>Answer</button>
-            </div>
-            <div className={player === 3 && "player3"}>
+              <div className={player === 3 && "player3"}>
               <div>player2</div>
               <div> have {player3Point} point</div>
               <button onClick={changeToPlayer3}>Answer</button>

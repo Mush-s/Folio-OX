@@ -1,14 +1,15 @@
+import "./Character.css";
 import { useState, useEffect } from "react";
-import "./Character2.css";
-const Character2 = () => {
+import Player from "../Player/Player";
+import Character2 from "../Character2/Character2";
+
+const Character = () => {
   const [charName, setCharName] = useState("");
   const [answer, setAnswer] = useState("");
   const [start, setStart] = useState(false);
+  const [player, setPlayer] = useState("");
   const [player1Point, setPlayer1Point] = useState(0);
   const [player2Point, setPlayer2Point] = useState(0);
-  const [player3Point, setPlayer3Point] = useState(0);
-
-  const [player, setPlayer] = useState();
   const [char, setChar] = useState({
     id: "",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU2VfwYNAH3zcUqi46YyKcMkCmYShfJDi94A&usqp=CAU",
@@ -111,12 +112,10 @@ const Character2 = () => {
     if (answer === random.name) {
       if (player === 1) {
         setPlayer1Point((preState) => preState + 1);
+        console.log("YES");
       }
       if (player === 2) {
         setPlayer2Point((preState) => preState + 1);
-      }
-      if (player === 3) {
-        setPlayer3Point((preState) => preState + 1);
       }
     } else {
       console.log("NO");
@@ -131,15 +130,10 @@ const Character2 = () => {
   const changeToPlayer2 = () => {
     setPlayer(2);
   };
-
-  const changeToPlayer3 = () => {
-    setPlayer(3);
-  };
-
   return (
     <>
-      <div className="character2">
-        <div>3PLAYER</div>
+      <div className="character">
+        <div>2PLAYER</div>
         <div>What is this name?</div>
         {/* <div>{random.name}</div> */}
         <img src={random.img} alt="" />
@@ -161,28 +155,25 @@ const Character2 = () => {
           </form>
         )}
         {start && <button onClick={deleteHandler}>delete</button>}
-        {start && (
-          <div className="players">
-            <div className={player === 1 && "player1"}>
-              <div>player1</div>
-              <div> have {player1Point} point</div>
-              <button onClick={changeToPlayer1}>Answer</button>
-            </div>
-            <div className={player === 2 && "player2"}>
-              <div>player2</div>
-              <div> have {player2Point} point</div>
-              <button onClick={changeToPlayer2}>Answer</button>
-            </div>
-            <div className={player === 3 && "player3"}>
-              <div>player2</div>
-              <div> have {player3Point} point</div>
-              <button onClick={changeToPlayer3}>Answer</button>
-            </div>
-          </div>
-        )}
       </div>
+      {start && (
+        <div className="players">
+          <Player
+            Point={player1Point}
+            Answer={changeToPlayer1}
+            number={1}
+            player={player}
+          />
+          <Player
+            Point={player2Point}
+            Answer={changeToPlayer2}
+            number={2}
+            player={player}
+          />
+        </div>
+      )}
     </>
   );
 };
 
-export default Character2;
+export default Character;
