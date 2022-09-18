@@ -7,7 +7,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .before .content {
@@ -19,6 +19,7 @@
 }
 
 .before button {
+display: flex;
   width: 80px;
   height: 40px;
   background-color: whitesmoke;

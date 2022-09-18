@@ -92,6 +92,7 @@ const Character = () => {
     setPlayer1Point(0);
     setPlayer2Point(0);
     setPlayer(0);
+    setStart(false);
   };
   //名前をつける
   const namedHandler = (e) => {

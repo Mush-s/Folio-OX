@@ -1,8 +1,8 @@
-import  "./BeforeGame.css";
+import classes from "./BeforeGame.css";
 
 const BeforeGame = (props) => {
   return (
-    <div className="before">
+    <div className={classes}>
       <div className="content">
         <h1>Choose player</h1>
         <button onClick={props.onClick}>2</button>

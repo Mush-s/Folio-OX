@@ -91,7 +91,6 @@ const Character = () => {
     setGameover(false);
     setPlayer1Point(0);
     setPlayer2Point(0);
-    setPlayer(0);
   };
   //名前をつける
   const namedHandler = (e) => {

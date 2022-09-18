@@ -43,6 +43,8 @@ const Character = () => {
   useEffect(() => {
     if (player1Point === 1) {
       setGameover(true);
+      setPlayer1Point(0);
+      setPlayer2Point(0);
     }
     if (player2Point === 1) {
       setGameover(true);
@@ -91,7 +93,6 @@ const Character = () => {
     setGameover(false);
     setPlayer1Point(0);
     setPlayer2Point(0);
-    setPlayer(0);
   };
   //名前をつける
   const namedHandler = (e) => {
@@ -190,7 +191,7 @@ const Character = () => {
           />
         </div>
       )}
-      {gameover && <AfterGame1 player={player} onClick={resetHandler} />}
+      {gameover && <AfterGame1 player={player} onClick={nextHandler} />}
     </>
   );
 };

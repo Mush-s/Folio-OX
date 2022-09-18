@@ -43,9 +43,15 @@ const Character = () => {
   useEffect(() => {
     if (player1Point === 1) {
       setGameover(true);
+      setPlayer1Point(0);
+      setPlayer2Point(0);
+      setPlayer(0);
     }
     if (player2Point === 1) {
       setGameover(true);
+      setPlayer1Point(0);
+      setPlayer2Point(0);
+      setPlayer(0);
     }
   }, [player1Point, player2Point]);
 
@@ -85,14 +91,9 @@ const Character = () => {
     e.preventDefault();
     setRandom(char[Math.floor(Math.random() * char.length)]);
     setStart(true);
+    setGameover(false);
   };
 
-  const resetHandler = () => {
-    setGameover(false);
-    setPlayer1Point(0);
-    setPlayer2Point(0);
-    setPlayer(0);
-  };
   //名前をつける
   const namedHandler = (e) => {
     e.preventDefault();
@@ -190,7 +191,7 @@ const Character = () => {
           />
         </div>
       )}
-      {gameover && <AfterGame1 player={player} onClick={resetHandler} />}
+      {gameover && <AfterGame1 player={player} onClick={nextHandler} />}
     </>
   );
 };

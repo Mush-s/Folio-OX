@@ -1,7 +1,7 @@
 import "./Character.css";
 import { useState, useEffect } from "react";
 import Player from "../Player/Player";
-import AfterGame1 from "../../AfterGame/AfterGame1";
+import AfterGame1 from "../AfterGame/AfterGame1";
 
 const Character = () => {
   const [charName, setCharName] = useState("");
@@ -41,15 +41,6 @@ const Character = () => {
   };
 
   useEffect(() => {
-    if (player1Point === 1) {
-      setGameover(true);
-    }
-    if (player2Point === 1) {
-      setGameover(true);
-    }
-  }, [player1Point, player2Point]);
-
-  useEffect(() => {
     fetchchara();
   }, [random, charName]);
 
@@ -85,14 +76,9 @@ const Character = () => {
     e.preventDefault();
     setRandom(char[Math.floor(Math.random() * char.length)]);
     setStart(true);
+    console.log("NExt");
   };
 
-  const resetHandler = () => {
-    setGameover(false);
-    setPlayer1Point(0);
-    setPlayer2Point(0);
-    setPlayer(0);
-  };
   //名前をつける
   const namedHandler = (e) => {
     e.preventDefault();
@@ -150,6 +136,9 @@ const Character = () => {
     setPlayer(2);
   };
 
+  if (player1Point === 5) {
+    setGameover(true);
+  }
   return (
     <>
       <div className="character">
@@ -190,7 +179,7 @@ const Character = () => {
           />
         </div>
       )}
-      {gameover && <AfterGame1 player={player} onClick={resetHandler} />}
+      {gameover && <AfterGame1 />}
     </>
   );
 };

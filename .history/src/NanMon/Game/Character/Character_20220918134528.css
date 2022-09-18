@@ -10,9 +10,9 @@
   margin-top: 30px;
 }
 
-.inputs button {
-  height: 80px;
-  margin: 0 auto;
+.inputs button{
+  height:50px;
+  text-align: center;
 }
 .players {
   display: flex;

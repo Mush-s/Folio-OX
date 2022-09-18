@@ -1,4 +1,4 @@
-import  "./BeforeGame.css";
+import classes from "./BeforeGame.css";
 
 const BeforeGame = (props) => {
   return (

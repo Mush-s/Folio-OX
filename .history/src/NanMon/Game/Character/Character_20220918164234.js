@@ -85,14 +85,9 @@ const Character = () => {
     e.preventDefault();
     setRandom(char[Math.floor(Math.random() * char.length)]);
     setStart(true);
+    setGameover(false);
   };
 
-  const resetHandler = () => {
-    setGameover(false);
-    setPlayer1Point(0);
-    setPlayer2Point(0);
-    setPlayer(0);
-  };
   //名前をつける
   const namedHandler = (e) => {
     e.preventDefault();
@@ -190,7 +185,7 @@ const Character = () => {
           />
         </div>
       )}
-      {gameover && <AfterGame1 player={player} onClick={resetHandler} />}
+      {gameover && <AfterGame1 player={player} onClick={nextHandler} />}
     </>
   );
 };

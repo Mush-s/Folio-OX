@@ -8,11 +8,11 @@
 }
 .inputs {
   margin-top: 30px;
+  margin: 0 auto;
 }
 
 .inputs button {
-  height: 80px;
-  margin: 0 auto;
+  height: 50px;
 }
 .players {
   display: flex;

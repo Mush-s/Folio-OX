@@ -91,7 +91,6 @@ const Character = () => {
     setGameover(false);
     setPlayer1Point(0);
     setPlayer2Point(0);
-    setPlayer(0);
   };
   //名前をつける
   const namedHandler = (e) => {
@@ -190,7 +189,7 @@ const Character = () => {
           />
         </div>
       )}
-      {gameover && <AfterGame1 player={player} onClick={resetHandler} />}
+      {gameover && <AfterGame1 player={player} onClick={nextHandler} />}
     </>
   );
 };
