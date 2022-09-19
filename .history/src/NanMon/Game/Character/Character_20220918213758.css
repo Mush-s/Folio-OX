@@ -1,0 +1,50 @@
+.character {
+  text-align: center;
+}
+
+.character img {
+  width: 300px;
+  height: 300px;
+}
+.inputs {
+  margin: 30px 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(204, 204, 204);
+}
+
+.inputs input{
+  height:40px;
+}
+.inputs button {
+  width: 150px;
+  height: 80px;
+  margin: 0 auto;
+  background-color: white;
+}
+.players {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  margin: 30px 30px;
+  background-color: rgb(204, 204, 204);
+}
+.player {
+  padding: 15px;
+}
+.player1 {
+  background-color: antiquewhite;
+  padding: 15px;
+}
+.player2 {
+  background-color: antiquewhite;
+  padding: 15px;
+}
+.player3 {
+  background-color: antiquewhite;
+  padding: 15px;
+}
+.players .vs {
+  margin-top: 40px;
+  font-size: 25px;
+}

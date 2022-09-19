@@ -1,0 +1,32 @@
+.character {
+  text-align: center;
+}
+
+.character img {
+  width: 300px;
+  height: 300px;
+}
+.inputs {
+  margin: 30px 30px;
+}
+
+.inputs button {
+  height: 80px;
+  margin: 0 auto;
+}
+.players {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  margin: 30px 30px;
+  background-color: black;
+}
+.player1 {
+  background-color: antiquewhite;
+}
+.player2 {
+  background-color: antiquewhite;
+}
+.player3 {
+  background-color: antiquewhite;
+}
