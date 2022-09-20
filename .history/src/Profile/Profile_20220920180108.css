@@ -1,0 +1,13 @@
+.profile {
+    display: flex;
+}
+
+.profile .picture {
+  background-color: aqua;
+  width: 200px;
+  height: 250px;
+}
+.profile img {
+  width: 40px;
+  height: 40px;
+}

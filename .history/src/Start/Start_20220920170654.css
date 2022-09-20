@@ -1,0 +1,106 @@
+.start {
+  text-align: center;
+  font-size: 60px;
+}
+.header {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  background-color: rgb(242, 242, 242);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 2;
+}
+.header-logo {
+  font-size: 60px;
+  margin-left: 50px;
+}
+.header-list {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 13px;
+}
+
+.header-list li {
+  font-size: 25px;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 15px;
+}
+
+
+.start-button {
+  padding-top: 130px;
+}
+.start-button li {
+  list-style-type: none;
+  width: 80%;
+  margin: 30px auto;
+  border: solid 2px;
+}
+
+.start-button li:hover {
+  background-color: rgb(108, 108, 108);
+}
+
+.start-button img {
+  width: 15%;
+}
+
+.start-button a {
+  display: block;
+  border-radius: 20%;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: 0.3s;
+}
+.start a:hover::after {
+  width: 100%;
+}
+
+
+
+.header-list li a {
+  position: relative;
+  display: inline-block;
+  padding: 0.1em 0.3em;
+  text-decoration: none;
+  font-weight: bold;
+}
+.header-list li a:after,
+.header-list li a::before {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  transition: all 0.3s ease;
+}
+.header-list li a:after {
+  right: 50%;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background-color: #337ab7; /*ホバー時の背景色*/
+}
+.header-list li a::before {
+  left: 0;
+  width: 100%;
+  height: calc(100% - 2px);
+  border-top: 1px solid #337ab7; /*上線*/
+  border-bottom: 1px solid #337ab7; /*下線*/
+}
+.header-list li a:hover:after {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+.header-list li a:hover::before {
+  right: 50%;
+  left: 50%;
+  width: 0%;
+}

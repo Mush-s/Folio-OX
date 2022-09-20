@@ -1,0 +1,15 @@
+.profile {
+    display: flex;
+    height:100vh;
+}
+
+.profile .picture {
+  background-color: aqua;
+  width: 200px;
+  height: 250px;
+}
+.profile img {
+  width: 190px;
+  height: 40px;
+}
+
