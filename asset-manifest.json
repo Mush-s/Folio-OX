@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Folio-OX/static/css/main.2cfb11f6.css",
+    "main.js": "/Folio-OX/static/js/main.5e311b58.js",
+    "index.html": "/Folio-OX/index.html",
+    "main.2cfb11f6.css.map": "/Folio-OX/static/css/main.2cfb11f6.css.map",
+    "main.5e311b58.js.map": "/Folio-OX/static/js/main.5e311b58.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2cfb11f6.css",
+    "static/js/main.5e311b58.js"
+  ]
+}
