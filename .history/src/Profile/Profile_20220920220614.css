@@ -1,0 +1,43 @@
+.profile {
+  height: 100vh;
+  margin: 15px;
+  background-color: rgb(236, 236, 236);
+}
+.first {
+  display: flex;;
+}
+
+.profile .picture {
+  background-color: rgb(117, 255, 31);
+  width: 180px;
+  height: 220px;
+}
+.profile img {
+  width: 170px;
+  height: 200px;
+}
+
+.profile .intro {
+  width: 70%;
+  height: 250px;
+  padding-left: 50px;
+}
+
+.profile .intro h1 {
+  margin-bottom: 20px;
+}
+.profile a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.intro .job {
+  background-color: aquamarine;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.middle{
+  margin:0 15px;
+}

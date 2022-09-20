@@ -1,0 +1,31 @@
+.profile {
+  display: flex;
+  height: 100vh;
+  margin:15px;
+}
+
+.profile .picture {
+  background-color: aqua;
+  width: 180px;
+  height: 220px;
+}
+.profile img {
+  width: 170px;
+  height: 200px;
+}
+
+.profile .intro {
+  width: 70%;
+  height: 250px;
+  padding-left: 50px;
+}
+
+.profile .intro h1 {
+  margin-bottom: 20px;
+}
+
+.intro .job {
+  background-color: aquamarine;
+  font-size: 20px;
+  margin-bottom:30px;
+}
