@@ -6,7 +6,7 @@ const Start = () => {
   return (
     <div className="start">
       <nav className="header">
-        <div className="header-logo">PORTFOLIO</div>
+        <div className="header-logo">作品集</div>
         <ul className="header-list">
           <li>
             <a href="#">Home</a>
@@ -15,7 +15,7 @@ const Start = () => {
             <a href="#">setting</a>
           </li>
           <li>
-            <a href="#">Profile</a>
+            <a href="#">Contact</a>
           </li>
         </ul>
       </nav>

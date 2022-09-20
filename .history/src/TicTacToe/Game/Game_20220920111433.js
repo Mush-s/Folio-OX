@@ -116,8 +116,6 @@ const Game = () => {
     setCellValues(["", "", "", "", "", "", "", "", ""]);
     setGameOver(false);
     setResult();
-    setOclose(false);
-    setXclose(false);
   };
 
   //Change button ここから
@@ -132,6 +130,7 @@ const Game = () => {
         }
       }
       if (player === "X") {
+        setXclose(true);
         if (xClose) {
           setMode("Normal");
         }

@@ -81,6 +81,7 @@ const Game = () => {
       } else {
         setPlayer("O");
       }
+      
 
       if (countDown === 0) {
         setGameOver(true);
@@ -95,11 +96,8 @@ const Game = () => {
         setCellValues(newCellValues);
 
         if (player === "O") {
-          setOclose(true);
-
           setPlayer("X");
         } else {
-          setXclose(true);
           setPlayer("O");
         }
       }
@@ -116,8 +114,6 @@ const Game = () => {
     setCellValues(["", "", "", "", "", "", "", "", ""]);
     setGameOver(false);
     setResult();
-    setOclose(false);
-    setXclose(false);
   };
 
   //Change button ここから
@@ -125,13 +121,14 @@ const Game = () => {
   const ChangeHandler = () => {
     if (mode === "Normal") {
       setMode("Repaint");
-
       if (player === "O") {
+        setOclose(true);
         if (oClose) {
           setMode("Normal");
         }
       }
       if (player === "X") {
+        setXclose(true);
         if (xClose) {
           setMode("Normal");
         }

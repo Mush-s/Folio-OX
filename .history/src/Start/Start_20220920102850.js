@@ -15,7 +15,7 @@ const Start = () => {
             <a href="#">setting</a>
           </li>
           <li>
-            <a href="#">Profile</a>
+            <a href="#">Contact</a>
           </li>
         </ul>
       </nav>

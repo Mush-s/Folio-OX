@@ -8,6 +8,8 @@ const BeforeGame = (props) => {
         <h2>１手５秒</h2>
         <h2>相手のマスを一度だけ塗り替えることができます</h2>
         <h2>その点以外はシンプルなOXゲームです</h2>
+
+        <p></p>
         <h3>右下のボタンで塗り替えモードに切り替えることができます</h3>
         <button onClick={props.onClick}>始める</button>
       </div>

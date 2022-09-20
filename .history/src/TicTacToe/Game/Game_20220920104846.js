@@ -12,7 +12,6 @@ const Game = () => {
   const [player, setPlayer] = useState("O");
   const [countDown, setCountDown] = useState(8);
   const [gameOver, setGameOver] = useState(false);
-  const [result, setResult] = useState();
   const [mode, setMode] = useState("Normal");
   const [time, setTime] = useState(5);
   const [oClose, setOclose] = useState(false);
@@ -54,11 +53,9 @@ const Game = () => {
   };
 
   useEffect(() => {
-    if (close) {
-      !gameOver && updataCount();
-      console.log(time);
-      return () => clearInterval(timer);
-    }
+    !gameOver && updataCount();
+    console.log(time);
+    return () => clearInterval(timer);
   });
 
   useEffect(() => {
@@ -95,11 +92,8 @@ const Game = () => {
         setCellValues(newCellValues);
 
         if (player === "O") {
-          setOclose(true);
-
           setPlayer("X");
         } else {
-          setXclose(true);
           setPlayer("O");
         }
       }
@@ -116,8 +110,6 @@ const Game = () => {
     setCellValues(["", "", "", "", "", "", "", "", ""]);
     setGameOver(false);
     setResult();
-    setOclose(false);
-    setXclose(false);
   };
 
   //Change button ここから
@@ -125,13 +117,14 @@ const Game = () => {
   const ChangeHandler = () => {
     if (mode === "Normal") {
       setMode("Repaint");
-
       if (player === "O") {
+        setOclose(true);
         if (oClose) {
           setMode("Normal");
         }
       }
       if (player === "X") {
+        setXclose(true);
         if (xClose) {
           setMode("Normal");
         }
@@ -185,10 +178,11 @@ const Game = () => {
           mode={mode}
           onClick={resetHandler}
           onChange={ChangeHandler}
+          // close={close}
         />
+        {!close && <BeforeGame onClick={closeHandler} />}
         {gameOver && <OverLay onClick={resetHandler} result={result} />}
       </div>
-      {!close && <BeforeGame onClick={closeHandler} />}
     </div>
   );
 };

@@ -116,8 +116,6 @@ const Game = () => {
     setCellValues(["", "", "", "", "", "", "", "", ""]);
     setGameOver(false);
     setResult();
-    setOclose(false);
-    setXclose(false);
   };
 
   //Change button ここから
