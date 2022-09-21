@@ -8,7 +8,7 @@ import Profile from "./Profile/Profile";
 const App = () => {
   return (
     <div className="app">
-      <Routes >
+      <Routes basename={process.env.PUBLIC_URL}>
         <Route path="/Games" element={<Start />} />
         <Route path="/tictactou" element={<Game />} />
         <Route path="/nanmon" element={<Game1 />} />
