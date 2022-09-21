@@ -10,7 +10,7 @@ const AfterGame = (props) => {
           <Link to="/tictactou">Game</Link>
         </button>
         <button>
-          <Link to="/Games">Home</Link>
+          <Link to="/desa">Home</Link>
         </button>
       </div>
     </div>

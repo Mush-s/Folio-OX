@@ -1,20 +1,20 @@
-import "./AfterGame.css";
-
 import { Link } from "react-router-dom";
-const AfterGame = (props) => {
+import "./AfterGame1.css";
+
+const AfterGame1 = (props) => {
   return (
     <div className="after">
       <div className="content">
-        <div className="result">{props.result}</div>
+        <h1>Winner is {props.player} player</h1>
         <button onClick={props.onClick}>
-          <Link to="/tictactou">Game</Link>
+          <Link to="/nanmon">Game</Link>
         </button>
         <button>
-          <Link to="/Games">Home</Link>
+          <Link to="/desa">Home</Link>
         </button>
       </div>
     </div>
   );
 };
 
-export default AfterGame;
+export default AfterGame1;

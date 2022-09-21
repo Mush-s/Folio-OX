@@ -32,7 +32,7 @@ const Profile = () => {
         <h2>趣味はチェス、ポーカー、ギターです。アニメも大好きです。</h2>
       </div>
       <div className="last">
-        <Link to="/Games">HOMEへ</Link>
+        <Link to="/desa">HOMEへ</Link>
       </div>
     </div>
   );
