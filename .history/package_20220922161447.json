@@ -19,7 +19,7 @@
     "rm": "rm -rf docs",
     "mv": "mv build docs",
     "git": "git add . && git commit && git push",
-    "deploy": "npm run rm && npm run build && npm run mv && npm run git",
+    "deploy": "npm run rm && npm run build && npm run mv",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
