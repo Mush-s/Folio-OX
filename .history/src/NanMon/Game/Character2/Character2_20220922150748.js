@@ -198,7 +198,7 @@ const Character = () => {
       <div className="inputs">
         {start && (
           <form className="make-character" onSubmit={namedHandler}>
-            <p>❶名前をつけてね</p>
+            <p>名前をつけてね</p>
             <input value={charName} onChange={changeHandler} />
             <input type="submit" />
           </form>
@@ -206,11 +206,11 @@ const Character = () => {
         <button onClick={nextHandler}>{!start ? "START" : "NEXT"}</button>
         {start && (
           <form className="answer-charcter" onSubmit={answerHandler}>
-            <p>❷名前を答えてね</p>
+            <p>名前を答えてね</p>
             <input value={answer} onChange={answerChange} />
             <input type="submit" />
           </form>
-        )}Ï
+        )}
       </div>
 
       {gameover && <AfterGame1 player={player} onClick={resetHandler} />}
